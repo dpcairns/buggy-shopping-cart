@@ -78,7 +78,12 @@ header img {
     height: var(--header-height);
 }
 
-
+.cocktail-card {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 5px black;
+    text-align: center;
+}
 
 content {
     width: 80%;

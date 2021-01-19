@@ -43,4 +43,5 @@ export const cocktails = [
         category: 'strong',
         price: 9,
         ingredients: 'Tequila, orange liqueur, lime juice. Garnish: lime slice',
-    },
+    }
+];
