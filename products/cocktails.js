@@ -2,7 +2,7 @@ export const cocktails = [
     {
         id: 1,
         name: 'Old Fashioned',
-        image: 'old-fashioned.jpg',
+        image: 'oldFashioned.jpg',
         description: 'A strong bourbon drink',
         category: 'strong',
         price: 8,
@@ -11,7 +11,7 @@ export const cocktails = [
     {
         id: 2,
         name: 'White Russian',
-        image: 'white-russian.jpg',
+        image: 'whiteRussian.jpg',
         description: 'A creamy vodka drink',
         category: 'creamy',
         price: 9,
@@ -20,7 +20,7 @@ export const cocktails = [
     {
         id: 3,
         name: 'French 75',
-        image: 'french-75.jpeg',
+        image: 'french75.jpeg',
         description: 'A gin and champagne drink',
         category: 'bubbles',
         price: 11,

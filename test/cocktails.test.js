@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { renderCocktail } from './products/render-cocktails.js';
+import { renderCocktail } from '../products/render-cocktails.js';
 
 const test = QUnit.test;
 
@@ -17,7 +17,7 @@ test('The function should take an animal and return a li', (expect) => {
     };
 
     // Set up your arguments and expectations
-    const expected = `<li class="cocktail-card"><div class="name">Old Fashioned</div><img src="/assets/old-fashioned.jpg" height="50px"><div class="description">'A strong bourbon drink'</div><div class="category">strong</div><div class="price">8</div><div class="ingredients">'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry'</div><button class="1">Add</button></li>`
+    const expected = `<li class="cocktail-card"><h3 class="name">Old Fashioned</h3><img src="/assets/oldFashioned.jpg" height="50px"><div class="description">'A strong bourbon drink'</div><div class="category">strong</div><div class="price">8</div><div class="ingredients">'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry'</div><button class="1">Add</button></li>`
     
     //Act 
     // Call the function you're testing and set the result to a const
