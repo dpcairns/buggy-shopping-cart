@@ -9,7 +9,7 @@ test('The function should take an animal and return a li', (expect) => {
     const oldFashioned = {
         id: 1,
         name: 'Old Fashioned',
-        image: 'old-fashioned.jpg',
+        image: 'oldFashioned.jpg',
         description: 'A strong bourbon drink',
         category: 'strong',
         price: 8,
@@ -17,7 +17,7 @@ test('The function should take an animal and return a li', (expect) => {
     };
 
     // Set up your arguments and expectations
-    const expected = `<li class="cocktail-card"><h3 class="name">Old Fashioned</h3><img src="/assets/oldFashioned.jpg" height="50px"><div class="description">'A strong bourbon drink'</div><div class="category">strong</div><div class="price">8</div><div class="ingredients">'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry'</div><button class="1">Add</button></li>`
+    const expected = `<li class="cocktail-card"><h3 class="cocktail-name">Old Fashioned</h3><img class="cocktail-image" src="/assets/oldFashioned.jpg"><description class="cocktail-description">A strong bourbon drink</description><category class="cocktail-category">strong</category><price class="cocktail-price">8</price><ingredients class="cocktail-ingredients">Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry</ingredients><button>Add to Cart</button></li>`
     
     //Act 
     // Call the function you're testing and set the result to a const

@@ -8,10 +8,33 @@ export function renderCocktail(cocktail) {
     li.append(h3);
 
     const img = document.createElement('img');
-    img.classList.add('cocktail.image');
-    img.src = `../assets/${cocktail.image}`;
+    img.classList.add('cocktail-image');
+    img.src = `/assets/${cocktail.image}`;
     li.append(img);
 
+    const description = document.createElement('description');
+    description.classList.add('cocktail-description');
+    description.textContent = cocktail.description;
+    li.append(description);
+
+    const category = document.createElement('category');
+    category.classList.add('cocktail-category');
+    category.textContent = cocktail.category;
+    li.append(category);
+
+    const price = document.createElement('price');
+    price.classList.add('cocktail-price');
+    price.textContent = cocktail.price;
+    li.append(price);
+
+    const ingredients = document.createElement('ingredients');
+    ingredients.classList.add('cocktail-ingredients');
+    ingredients.textContent = cocktail.ingredients;
+    li.append(ingredients);
+
+    const button = document.createElement('button');
+    button.textContent = 'Add to Cart';
+    li.append(button);
 
     console.log(li);
 
@@ -19,10 +42,6 @@ export function renderCocktail(cocktail) {
 }
 
 {/* 
-<img src= '/assets/old-fashioned.jpg' height="50px">
-<div id= 'description'>'A strong bourbon drink'</div>
-<div id= 'category'>strong</div>
-<div id= 'price'>8</div>
-<div id= 'ingredients'>'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry'</div>
+
 <button id= 1>Add</button>
 </div> */}

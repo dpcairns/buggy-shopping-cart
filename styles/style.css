@@ -78,20 +78,36 @@ header img {
     height: var(--header-height);
 }
 
-.cocktail-card {
+ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#cocktail-card {
     display: flex;
     flex-wrap: wrap;
     border: solid 5px black;
     text-align: center;
 }
 
-content {
-    width: 80%;
+.cocktail-image {
+    height: 80px;
+    width: 80px;
 }
 
+/* .cocktail-name {
+    background-color: red;
+} */
+
+/* content {
+    width: 80%;
+} */
+/* 
 p {
     margin: var(--gutter);
-}
+} */
   
 footer {
     position: fixed;
@@ -103,22 +119,3 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
