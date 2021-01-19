@@ -85,16 +85,14 @@ ul {
     justify-content: space-between;
 }
 
-#cocktail-card {
-    display: flex;
-    flex-wrap: wrap;
-    border: solid 5px black;
-    text-align: center;
-}
-
 .cocktail-image {
     height: 80px;
     width: 80px;
+}
+
+li {
+    border: solid 1px black;
+    text-align: center;
 }
 
 /* .cocktail-name {

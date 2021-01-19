@@ -12,25 +12,25 @@ export function renderCocktail(cocktail) {
     img.src = `/assets/${cocktail.image}`;
     li.append(img);
 
-    const description = document.createElement('description');
-    description.classList.add('cocktail-description');
-    description.textContent = cocktail.description;
-    li.append(description);
+    const pDescription = document.createElement('p');
+    pDescription.classList.add('cocktail-description');
+    pDescription.textContent = cocktail.description;
+    li.append(pDescription);
 
-    const category = document.createElement('category');
-    category.classList.add('cocktail-category');
-    category.textContent = cocktail.category;
-    li.append(category);
+    const pCategory = document.createElement('p');
+    pCategory.classList.add('cocktail-pCategory');
+    pCategory.textContent = `Category: ${cocktail.category}`;
+    li.append(pCategory);
 
-    const price = document.createElement('price');
-    price.classList.add('cocktail-price');
-    price.textContent = cocktail.price;
-    li.append(price);
+    const pPrice = document.createElement('p');
+    pPrice.classList.add('cocktail-pPrice');
+    pPrice.textContent = `$ ${cocktail.price}`;
+    li.append(pPrice);
 
-    const ingredients = document.createElement('ingredients');
-    ingredients.classList.add('cocktail-ingredients');
-    ingredients.textContent = cocktail.ingredients;
-    li.append(ingredients);
+    const pIngredients = document.createElement('p');
+    pIngredients.classList.add('cocktail-pIngredients');
+    pIngredients.textContent = `Ingredients: ${cocktail.ingredients}`;
+    li.append(pIngredients);
 
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
