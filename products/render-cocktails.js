@@ -9,7 +9,7 @@ export function renderCocktail(cocktail) {
 
     const img = document.createElement('img');
     img.classList.add('cocktail-image');
-    img.src = `./assets/${cocktail.image}`;
+    img.src = `../assets/${cocktail.image}`;
     li.append(img);
 
     const pDescription = document.createElement('p');
