@@ -92,12 +92,34 @@ ul {
 
 li {
     border: solid 1px black;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
 }
 
-/* .cocktail-name {
-    background-color: red;
-} */
+.cocktail-name {
+    font-weight: 800;
+    font-size: x-large;
+}
+
+.cocktail-pIngredients {
+    font-style: italic;
+    font-size: small;
+}
+
+.cocktail-pPrice {
+    font-weight: 600;
+}
+
+.cocktail-pCategory {
+    font-style: italic;
+    font-size: x-small;
+}
 
 /* content {
     width: 80%;
