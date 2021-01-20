@@ -16,32 +16,26 @@ export function renderCocktail(cocktail) {
     pDescription.classList.add('cocktail-description');
     pDescription.textContent = cocktail.description;
     li.append(pDescription);
-
+    
+    const pIngredients = document.createElement('p');
+    pIngredients.classList.add('cocktail-pIngredients');
+    pIngredients.textContent = `Ingredients: ${cocktail.ingredients}`;
+    li.append(pIngredients);
+    
+    const pPrice = document.createElement('p');
+    pPrice.classList.add('cocktail-pPrice');
+    pPrice.textContent = `$ ${cocktail.price}`;
+    li.append(pPrice);
+    
     const pCategory = document.createElement('p');
     pCategory.classList.add('cocktail-pCategory');
     pCategory.textContent = `Category: ${cocktail.category}`;
     li.append(pCategory);
 
-    const pPrice = document.createElement('p');
-    pPrice.classList.add('cocktail-pPrice');
-    pPrice.textContent = `$ ${cocktail.price}`;
-    li.append(pPrice);
-
-    const pIngredients = document.createElement('p');
-    pIngredients.classList.add('cocktail-pIngredients');
-    pIngredients.textContent = `Ingredients: ${cocktail.ingredients}`;
-    li.append(pIngredients);
 
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     li.append(button);
 
-    console.log(li);
-
     return li;
 }
-
-{/* 
-
-<button id= 1>Add</button>
-</div> */}

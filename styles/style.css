@@ -1,17 +1,12 @@
 
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-/* 
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
+    --color1:rgba(46, 196, 182, 1);
+    --color2:rgba(203, 243, 240, 1);
+    --color3:rgba(46, 196, 182, 1);
+    --color4:rgba(255, 160, 28, 0.788);
+    --color5:rgb(255, 190, 105);
+
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -31,8 +26,8 @@ main {
 }
 
 section {
-    background-color: var(--color5);
-    width: 1000px;
+    background-color: var(--color4);
+    width: 100%;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -47,7 +42,11 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+    font-weight: 700;
+    color: white;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
@@ -56,7 +55,7 @@ header {
 footer {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: var(--color1);
     box-shadow: var(--shadow);
 }
 
@@ -79,7 +78,7 @@ header img {
 }
 
 ul {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -100,6 +99,7 @@ li {
     width: 300px;
     margin-bottom: 20px;
     padding-bottom: 5px;
+    background-color: var(--color5);
 }
 
 .cocktail-name {
@@ -110,6 +110,7 @@ li {
 .cocktail-pIngredients {
     font-style: italic;
     font-size: small;
+    margin: 5px;
 }
 
 .cocktail-pPrice {
@@ -136,6 +137,6 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: var(--color1);
     box-shadow: var(--shadow);
 }
