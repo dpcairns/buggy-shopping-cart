@@ -9,7 +9,7 @@ export function renderCocktail(cocktail) {
 
     const img = document.createElement('img');
     img.classList.add('cocktail-image');
-    img.src = `/assets/${cocktail.image}`;
+    img.src = `./assets/${cocktail.image}`;
     li.append(img);
 
     const pDescription = document.createElement('p');
@@ -31,7 +31,6 @@ export function renderCocktail(cocktail) {
     pCategory.classList.add('cocktail-pCategory');
     pCategory.textContent = `Category: ${cocktail.category}`;
     li.append(pCategory);
-
 
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
