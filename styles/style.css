@@ -121,14 +121,6 @@ li {
     font-style: italic;
     font-size: x-small;
 }
-
-/* content {
-    width: 80%;
-} */
-/* 
-p {
-    margin: var(--gutter);
-} */
   
 footer {
     position: fixed;
@@ -139,4 +131,14 @@ footer {
     justify-content: flex-end;
     background-color: var(--color1);
     box-shadow: var(--shadow);
+}
+
+#cart-table {
+    border: solid 1px black;
+    margin-bottom: 15px;
+}
+
+#table-header {
+    border: 2px;
+    text-emphasis: bold;
 }
