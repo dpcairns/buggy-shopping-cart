@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { renderCocktail } from '../products/render-cocktails.js';
-import { findById, calcItemTotal } from '../cart/cart.utils.js';
+import { findById, calcItemTotal, renderCart } from '../cart/cart.utils.js';
 
 const test = QUnit.test;
 
@@ -67,7 +67,7 @@ test('The function should take an array and an id and return the first item with
 
 
 // Item total test
-test('The function should take an item and an array, pull the price(8) from the cocktails array and quantity(2) from the cartItem and return the product of the two(16)', (expect) => {
+test('The function should take an two objects (cartItem and cocktail), pull the price(8) from the cocktail object and quantity(2) from the cartItem and return the product of the two(16)', (expect) => {
     //Arrange
     const cocktail = 
         {
@@ -97,4 +97,37 @@ test('The function should take an item and an array, pull the price(8) from the 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+
+
+//cartRender function test
+test('The function should take an two objects (cartItem and cocktail) and return a table row with: the item name from the cocktail, quantity from the cartItem, and run the calcItemTotal to find the total for that line item', (expect) => {
+    //Arrange
+    const cocktail =
+        {
+            id: 1,
+            name: 'Old Fashioned',
+            image: 'oldFashioned.jpg',
+            description: 'A strong bourbon drink',
+            category: 'strong',
+            price: 8,
+            ingredients: 'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry',
+        };
+
+    const cartItem = 
+        {
+            id: 1,
+            quantity: 2,
+        };
+
+    // Set up your arguments and expectations
+    const expected = `<tr><td>Old Fashioned</td><td>2</td><td>$16</td></tr>`;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderCart(cartItem, cocktail);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
 });
