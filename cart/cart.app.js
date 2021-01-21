@@ -9,16 +9,16 @@ let cartTotal = 0;
 
 for (let item of shoppingCart) {
     const cocktail = findById(item.id, cocktails);
-
     const cocktailTotal = calcItemTotal(item, cocktail);
 
     cartTotal = cartTotal + cocktailTotal;
 
-    const newcartRow = renderCart(item, cocktail);
+    const newCartRow = renderCart(item, cocktail);
 
-    table.append(newcartRow);
+    table.append(newCartRow);
 }
 
+//Total row
 const tr = document.createElement('tr');
 
 const totalTd1 = document.createElement('td');

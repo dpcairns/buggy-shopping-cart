@@ -40,3 +40,4 @@ export function calcCartTotal(cart, cocktails) {
     return cartTotal;
 
 }
+
