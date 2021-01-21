@@ -27,6 +27,7 @@ totalTd1.textContent = `Order total`;
 
 const totalTd2 = document.createElement('td');
 
+cartTotal = calcCartTotal(shoppingCart, cocktails);
 const totalTd3 = document.createElement('td');
 totalTd3.textContent = ` $${cartTotal}`;
 

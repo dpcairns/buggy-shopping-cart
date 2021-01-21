@@ -175,5 +175,5 @@ test('The function should take the cart array and the cocktails array and return
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });
