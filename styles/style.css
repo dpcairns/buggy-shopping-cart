@@ -133,12 +133,13 @@ footer {
     box-shadow: var(--shadow);
 }
 
-#cart-table {
+table {
+    width: 80%;
     border: solid 1px black;
     margin-bottom: 15px;
 }
 
-#table-header {
+th {
     border: 2px;
-    text-emphasis: bold;
+    font-weight: bold;
 }
