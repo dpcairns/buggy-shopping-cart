@@ -143,3 +143,15 @@ th {
     border: 2px;
     font-weight: bold;
 }
+
+tbody {
+    justify-items: center;
+    align-items: center;
+    border-bottom: solid 5px black;
+
+}
+
+tfoot {
+    font-weight: bold;
+    border-top: solid 5px black;
+}

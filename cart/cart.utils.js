@@ -26,3 +26,21 @@ export function renderCart(cartItem, cocktail) {
 
     return tr;
 }
+
+export function calcCartTotal(cart, cocktails) {
+    let cartTotal = 0;
+
+    for (let item of cart) {
+
+        const cocktail = findById(item.id, cocktails);
+        const cocktailTotal = calcItemTotal(item, cocktail);
+    
+        cartTotal = cartTotal + cocktailTotal;
+    }
+    return cartTotal;
+
+}
+// export function calcItemTotal(cartItem, cocktail) {
+//     return cartItem.quantity * cocktail.price;
+// } 
+
