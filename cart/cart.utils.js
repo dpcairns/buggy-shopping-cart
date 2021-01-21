@@ -40,7 +40,3 @@ export function calcCartTotal(cart, cocktails) {
     return cartTotal;
 
 }
-// export function calcItemTotal(cartItem, cocktail) {
-//     return cartItem.quantity * cocktail.price;
-// } 
-
