@@ -6,13 +6,6 @@ export function findById(id, array) {
     }
 }
 
-
-
-// 1) get cocktail from cart item 
-// 2) loop through cocktails array
-// 3) check id
-//     a) if match = get price
-//     b) else, move on 
-// 4) store price 
-// 5) get quantity from cart and store it 
-// 6) make var to store quantity * stored price
+export function calcItemTotal(cartItem, cocktail) {
+    return cartItem.quantity * cocktail.price;
+} 
