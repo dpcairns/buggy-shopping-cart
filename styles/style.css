@@ -142,6 +142,7 @@ table {
 th {
     border: 2px;
     font-weight: bold;
+    /* background-color: var(--color5); */
 }
 
 tbody {
@@ -153,4 +154,5 @@ tbody {
 tfoot {
     font-weight: bold;
     border-top: solid 5px black;
+    /* background-color: var(--color5); */
 }

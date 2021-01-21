@@ -5,7 +5,6 @@ import { cocktails } from '../products/cocktails.js';
 const table = document.querySelector('tbody');
 const tfoot = document.querySelector('tfoot');
 
-
 let cartTotal = 0;
 
 for (let item of shoppingCart) {
