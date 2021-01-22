@@ -2,13 +2,17 @@ import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart } from '.
 // import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
-const CART = 'CART';
-// GETTING ERROR HERE. FIX!!!!
-const shoppingCart = JSON.parse(localStorage.getItem(CART));
 const table = document.querySelector('tbody');
 const tfoot = document.querySelector('tfoot');
 
 let cartTotal = 0;
+
+const CART = 'CART';
+// const stringyCart = localStorage.getItem(CART);
+// const shoppingCart = JSON.parse(stringyCart);
+// !!CHECK OUT THESE ERRORS!!!!
+const shoppingCart = JSON.parse(localStorage.getItem(CART));
+
 
 for (let item of shoppingCart) {
     const cocktail = findById(item.id, cocktails);
@@ -35,7 +39,6 @@ totalTd3.textContent = ` $${cartTotal}`;
 
 tr.append(totalTd1, totalTd2, totalTd3);
 tfoot.append(tr);
-
 
 // Click handler for Place Order
 const button = document.querySelector('button');

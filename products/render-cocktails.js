@@ -35,7 +35,7 @@ export function renderCocktail(cocktail) {
     li.append(pCategory);
 
     const button = document.createElement('button');
-    // Click handler for Add to Cart
+    // ADD AN ALERT OR SOMETHING HERE. aND AMOUNT
     button.addEventListener('click', () => {
         addToCart(cocktail.id);
     });
