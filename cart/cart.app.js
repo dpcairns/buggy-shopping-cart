@@ -1,4 +1,4 @@
-import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart } from './cart.utils.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart, getCart } from './cart.utils.js';
 // import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
@@ -10,8 +10,7 @@ let cartTotal = 0;
 const CART = 'CART';
 // const stringyCart = localStorage.getItem(CART);
 // const shoppingCart = JSON.parse(stringyCart);
-// !!CHECK OUT THESE ERRORS!!!!
-const shoppingCart = JSON.parse(localStorage.getItem(CART));
+const shoppingCart = getCart();
 
 
 for (let item of shoppingCart) {
@@ -44,8 +43,9 @@ tfoot.append(tr);
 const button = document.querySelector('button');
     // if cart empty, hide button !!!TO DO!!!
 button.addEventListener('click', () => {
-    alert(JSON.stringify('We have placed your order'));
-    // NOT WORKING. SPEND SOME TIME ON THIS!!!!
     clearCart();
+    alert(JSON.stringify('We have placed your order'));
+    location.reload();
+    location.href = '../index.html';
 });
 
