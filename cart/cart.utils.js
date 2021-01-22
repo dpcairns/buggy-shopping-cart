@@ -62,15 +62,32 @@ export function clearCart() {
     localStorage.setItem(CART, stringyDefaultCart);
 }
 
-
 export function setCart(cart) {
     const stringyCart = JSON.stringify(cart);
 
     localStorage.setItem(CART, stringyCart);
 }
 
+export function addToCart(id) {
+    const cart = getCart();
+    // check if item with this id is in cart
+    const cartItem = findById(id, cart);
+    // if so, increment
+    if (cartItem) {
+        cartItem.quantity++;
+        // if not, add
+    } else {
+        const newItemInCart = {
+            id: id,
+            quantity: 1
+        };
+        cart.push(newItemInCart);
+    }
+    setCart(cart);
+}
 
-// addToCart
+
+
 // 1. Make it so you can click on products and add them to the cart in localStorage
 
     // a) We need a button to click

@@ -1,3 +1,5 @@
+import { addToCart } from '../cart/cart.utils';
+
 export function renderCocktail(cocktail) {
     const li = document.createElement('li');
     li.classList.add('cocktail-card');
@@ -33,6 +35,10 @@ export function renderCocktail(cocktail) {
     li.append(pCategory);
 
     const button = document.createElement('button');
+    // Click handler for Add to Cart
+    button.addEventListener('click', () => {
+        addToCart(cocktail.id);
+    });
     button.textContent = 'Add to Cart';
     li.append(button);
 

@@ -1,4 +1,4 @@
-import { findById, calcItemTotal, renderCart, calcCartTotal } from './cart.utils.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal, getCart } from './cart.utils.js';
 import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
@@ -32,3 +32,12 @@ totalTd3.textContent = ` $${cartTotal}`;
 
 tr.append(totalTd1, totalTd2, totalTd3);
 tfoot.append(tr);
+
+
+// Click handler for Place Order
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+    // get cart, then add item to cart
+    const cart = getCart();
+    alert(JSON.stringify(cart, true, 2));
+});
