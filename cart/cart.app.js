@@ -1,8 +1,9 @@
-import { findById, calcItemTotal, renderCart, calcCartTotal } from './cart.utils.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart } from './cart.utils.js';
 // import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
 const CART = 'CART';
+// GETTING ERROR HERE. FIX!!!!
 const shoppingCart = JSON.parse(localStorage.getItem(CART));
 const table = document.querySelector('tbody');
 const tfoot = document.querySelector('tfoot');
@@ -41,5 +42,7 @@ const button = document.querySelector('button');
     // if cart empty, hide button !!!TO DO!!!
 button.addEventListener('click', () => {
     alert(JSON.stringify('We have placed your order'));
+    // NOT WORKING. SPEND SOME TIME ON THIS!!!!
+    clearCart();
 });
 
