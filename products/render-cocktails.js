@@ -1,4 +1,4 @@
-import { addToCart } from '../cart/cart.utils';
+import { addToCart } from '../cart/cart.utils.js';
 
 export function renderCocktail(cocktail) {
     const li = document.createElement('li');

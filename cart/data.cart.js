@@ -1,10 +1,11 @@
-export const shoppingCart = [
-    {
-        id: 1,
-        quantity: 2,
-    },
-    {
-        id: 4,
-        quantity: 3,
-    },
-];
+// export const shoppingCart = [
+//     {
+//         id: 1,
+//         quantity: 2,
+//     },
+//     {
+//         id: 4,
+//         quantity: 3,
+//     },
+// ];
+

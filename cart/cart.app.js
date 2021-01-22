@@ -1,7 +1,9 @@
-import { findById, calcItemTotal, renderCart, calcCartTotal, getCart } from './cart.utils.js';
-import { shoppingCart } from './data.cart.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal } from './cart.utils.js';
+// import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
+const CART = 'CART';
+const shoppingCart = JSON.parse(localStorage.getItem(CART));
 const table = document.querySelector('tbody');
 const tfoot = document.querySelector('tfoot');
 
@@ -36,8 +38,8 @@ tfoot.append(tr);
 
 // Click handler for Place Order
 const button = document.querySelector('button');
+    // if cart empty, hide button !!!TO DO!!!
 button.addEventListener('click', () => {
-    // get cart, then add item to cart
-    const cart = getCart();
-    alert(JSON.stringify(cart, true, 2));
+    alert(JSON.stringify('We have placed your order'));
 });
+
