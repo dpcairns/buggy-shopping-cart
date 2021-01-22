@@ -1,12 +1,12 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { renderCocktail } from '../products/render-cocktails.js';
-import { findById, calcItemTotal, renderCart, calcCartTotal, getCart } from '../cart/cart.utils.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal, getCart, clearCart, setCart } from '../cart/cart.utils.js';
 
 const test = QUnit.test;
 
 // render cocktail test
-test('The function should take an animal and return a li', (expect) => {
+test('The function should take a cocktail and return a li', (expect) => {
     //Arrange
     const oldFashioned = {
         id: 1,
@@ -19,7 +19,7 @@ test('The function should take an animal and return a li', (expect) => {
     };
 
     // Set up your arguments and expectations
-    const expected = `<li class="cocktail-card"><h3 class="cocktail-name">Old Fashioned</h3><img class="cocktail-image" src="../assets/oldFashioned.jpg"><p class="cocktail-description">A strong bourbon drink</p><p class="cocktail-pIngredients">Ingredients: Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry</p><p class="cocktail-pPrice">$ 8</p><p class="cocktail-pCategory">Category: strong</p><button>Add to Cart</button></li>`;
+    const expected = `<li class="cocktail-card"><h3 class="cocktail-name">Old Fashioned</h3><img class="cocktail-image" src="../assets/oldFashioned.jpg"><p class="cocktail-description">A strong bourbon drink</p><p class="cocktail-pIngredients">Ingredients: Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry</p><p class="cocktail-pPrice">$ 8</p><p class="cocktail-pCategory">Category: strong</p><select name="quantity" class="quantity-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select><button>Add to Cart</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -203,42 +203,34 @@ test('check if there"s a cart in in local storage and if so, grab it from local 
 });
 
 
-// //clearCart test !!!NEED TO FIX!!!
-// test('Clear the cart in local storage', (expect) => {
-//     //Arrange
-//     const defaultEmptyCart = [];
-//     const stringyCart = JSON.stringify(defaultEmptyCart);
+// //clearCart test
+test('stringify the empty cart and set in local storage and return empty cart', (expect) => {
 
-//     // Set up your arguments and expectations
-//     const expected = stringyCart;
+    const expected = [];
+
+    clearCart();
     
-//     //Act 
-//     // Call the function you're testing and set the result to a const
-//     const actual = clearCart();
+    const actual = getCart();
 
-//     //Expect
-//     // Make assertions about what is expected versus the actual result
-//     expect.deepEqual(actual, expected);
-// });
+    expect.deepEqual(actual, expected);
+});
 
-// //setCart test !!!NEED TO FIX!!!
-// test('When given a cart, this function should save it in local storage', (expect) => {
-//     //Arrange
-//     const cart = [
-//         {
-//             id: 1,
-//             quantity: 2,
-//         }];
-//     const stringyCart = JSON.stringify(cart);
+// //setCart test
+test('When given a cart array, this function should stringify it and save it in local storage', (expect) => {
+    const testCart = [
+        {
+            id: 1,
+            quantity: 2,
+        }];
+    const stringyCart = JSON.stringify(testCart);
 
-//     // Set up your arguments and expectations
-//     const expected = stringyCart;
+    const expected = stringyCart;
     
-//     //Act 
-//     // Call the function you're testing and set the result to a const
-//     const actual = setCart(cart);
+    setCart(testCart);
 
-//     //Expect
-//     // Make assertions about what is expected versus the actual result
-//     expect.equal(actual, expected);
-// });
+
+
+    const actual = getCart();
+
+    expect.deepEqual(actual, expected);
+});

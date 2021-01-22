@@ -91,6 +91,7 @@ ul {
 
 li {
     border: solid 2px black;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -154,4 +155,9 @@ tfoot {
     font-style: italic;
     border-top: solid 2px black;
     /* background-color: var(--color5); */
+}
+
+.quantity-select {
+    margin: 5px;
+
 }

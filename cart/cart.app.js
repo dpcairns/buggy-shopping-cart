@@ -7,9 +7,7 @@ const tfoot = document.querySelector('tfoot');
 
 let cartTotal = 0;
 
-const CART = 'CART';
-// const stringyCart = localStorage.getItem(CART);
-// const shoppingCart = JSON.parse(stringyCart);
+// const CART = 'CART';
 const shoppingCart = getCart();
 
 
@@ -41,11 +39,18 @@ tfoot.append(tr);
 
 // Click handler for Place Order
 const button = document.querySelector('button');
-    // if cart empty, hide button !!!TO DO!!!
-button.addEventListener('click', () => {
-    clearCart();
-    alert(JSON.stringify('We have placed your order'));
-    location.reload();
-    location.href = '../index.html';
-});
+if (shoppingCart.length === 0) {
+    button.disabled = 'true';
+} else {
+    button.addEventListener('click', () => {
+        clearCart();
+        alert(JSON.stringify(shoppingCart, true, 2));
+        location.reload();
+        location.href = '../index.html';
+    });
+}
 
+// // Dropdown for quantity
+// fontList.addEventListener('change', () => {
+//     nameField.style.fontFamily = "roboto";
+// })
