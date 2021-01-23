@@ -38,6 +38,7 @@ section {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
+    border-radius: 5px;
 }
 
 header {
@@ -160,4 +161,31 @@ tfoot {
 .quantity-select {
     margin: 5px;
 
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 20px;
+    bottom: 80%;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80%; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 80%; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }

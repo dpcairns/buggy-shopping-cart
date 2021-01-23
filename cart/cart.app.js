@@ -42,7 +42,7 @@ if (shoppingCart.length === 0) {
 } else {
     button.addEventListener('click', () => {
         clearCart();
-        alert(JSON.stringify(shoppingCart, true, 2));
+        alert(JSON.stringify('Your order has been completed!'));
         location.reload();
         location.href = '../index.html';
     });

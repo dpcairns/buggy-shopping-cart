@@ -71,18 +71,22 @@ export function setCart(cart) {
 export function addToCart(id, addQuantity) {
     const cart = getCart();
     const cartItem = findById(id, cart);
-    const cartQuantity = addQuantity;
 
     if (cartItem) {
-        cartItem.quantity += cartQuantity;
+        cartItem.quantity += addQuantity;
     } else {
         const newItemInCart = {
             id: id,
-            quantity: cartQuantity,
+            quantity: addQuantity,
         };
-        
         cart.push(newItemInCart);
     }
     setCart(cart);
 }
 
+export function toastFunction(quantity) {
+    const x = document.getElementById('toast');
+    x.className = 'show';
+    x.textContent = `${quantity} added to cart`;
+    setTimeout(function(){ x.className = x.className.replace('show', 'toast'); }, 3000);
+}
