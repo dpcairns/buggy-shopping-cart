@@ -222,15 +222,11 @@ test('When given a cart array, this function should stringify it and save it in 
             id: 1,
             quantity: 2,
         }];
-    const stringyCart = JSON.stringify(testCart);
+    const stringCart = JSON.stringify(testCart);
 
-    const expected = stringyCart;
-    
-    setCart(testCart);
+    const expected = localStorage.setItem('CART', stringCart);    
 
-
-
-    const actual = getCart();
+    const actual = setCart(testCart);
 
     expect.deepEqual(actual, expected);
 });
