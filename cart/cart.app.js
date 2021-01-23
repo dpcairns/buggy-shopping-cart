@@ -1,5 +1,4 @@
 import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart, getCart } from './cart.utils.js';
-// import { shoppingCart } from './data.cart.js';
 import { cocktails } from '../products/cocktails.js';
 
 const table = document.querySelector('tbody');
@@ -7,7 +6,6 @@ const tfoot = document.querySelector('tfoot');
 
 let cartTotal = 0;
 
-// const CART = 'CART';
 const shoppingCart = getCart();
 
 
@@ -49,8 +47,3 @@ if (shoppingCart.length === 0) {
         location.href = '../index.html';
     });
 }
-
-// // Dropdown for quantity
-// fontList.addEventListener('change', () => {
-//     nameField.style.fontFamily = "roboto";
-// })

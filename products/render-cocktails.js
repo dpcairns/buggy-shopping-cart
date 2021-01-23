@@ -57,6 +57,16 @@ export function renderCocktail(cocktail) {
         quantitySelect.add(option3);
         option3.textContent = '3';
         option3.value = '3';
+
+        const option4 = document.createElement('option');
+        quantitySelect.add(option4);
+        option4.textContent = '4';
+        option4.value = '4';
+
+        const option5 = document.createElement('option');
+        quantitySelect.add(option5);
+        option5.textContent = '5';
+        option5.value = '5';
         
         li.append(quantitySelect);
     }
