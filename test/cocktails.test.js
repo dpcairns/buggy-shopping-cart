@@ -15,7 +15,7 @@ test('The function should take a cocktail and return a li', (expect) => {
         ingredients: 'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry',
     };
 
-    const expected = `<li class="cocktail-card"><h3 class="cocktail-name">Old Fashioned</h3><img class="cocktail-image" src="../assets/oldFashioned.jpg"><p class="cocktail-description">A strong bourbon drink</p><p class="cocktail-pIngredients">Ingredients: Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry</p><p class="cocktail-pPrice">$ 8</p><p class="cocktail-pCategory">Category: strong</p><select name="quantity" class="quantity-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><button>Add to Cart</button></li>`;
+    const expected = `<li class="cocktail-card"><h3 class="cocktail-name">Old Fashioned</h3><img class="cocktail-image" src="../assets/oldFashioned.jpg"><p class="cocktail-description">A strong bourbon drink</p><p class="cocktail-pIngredients">Ingredients: Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry</p><p class="cocktail-pPrice">$ 8</p><p class="cocktail-pCategory">Category: strong</p><select name="quantity" class="quantity-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><button>Add to Cart</button></li>`; 
 
     const actual = renderCocktail(oldFashioned);
 
@@ -45,7 +45,6 @@ test('The function should take an array and an id and return the first item with
         price: 8,
         ingredients: 'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry',
     };
-    
     const actual = findById(1, cocktails);
 
     expect.deepEqual(actual, expected);
@@ -64,7 +63,6 @@ test('The function should take an two objects (cartItem and cocktail), pull the 
             price: 8,
             ingredients: 'Bourbon, simple syrup, bitters. Garnish: orange peel, maraschino cherry',
         };
-
     const cartItem = 
         {
             id: 1,
@@ -72,7 +70,6 @@ test('The function should take an two objects (cartItem and cocktail), pull the 
         };
 
     const expected = 16;
-
     const actual = calcItemTotal(cartItem, cocktail);
 
     expect.equal(actual, expected);
