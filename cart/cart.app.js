@@ -14,9 +14,7 @@ for (let item of shoppingCart) {
     const cocktailTotal = calcItemTotal(item, cocktail);
 
     cartTotal = cartTotal + cocktailTotal;
-
     const newCartRow = renderCart(item, cocktail);
-
     table.append(newCartRow);
 }
 
