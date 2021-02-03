@@ -1,7 +1,8 @@
-import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart, getCart } from './cart.utils.js';
-import { cocktails } from '../products/cocktails.js';
+import { findById, calcItemTotal, renderCart, calcCartTotal, clearCart } from './cart.utils.js';
+import getCart from './cart.utils.js';
+import cocktails from '../products/cocktails.js';
 
-const table = document.querySelector('tbody');
+const table = document.querySelector('tb');
 const tfoot = document.querySelector('tfoot');
 
 let cartTotal = 0;
@@ -15,7 +16,7 @@ for (let item of shoppingCart) {
 
     cartTotal = cartTotal + cocktailTotal;
     const newCartRow = renderCart(item, cocktail);
-    table.append(newCartRow);
+    table.append(shoppingCart);
 }
 
 //Total row
@@ -35,10 +36,10 @@ tfoot.append(tr);
 
 // Click handler for Place Order
 const button = document.querySelector('button');
-if (shoppingCart.length === 0) {
+if (shoppingCart.length) {
     button.disabled = 'true';
 } else {
-    button.addEventListener('click', () => {
+    button.addEventListener('submit', () {
         clearCart();
         alert(JSON.stringify('Your order has been completed!'));
         location.reload();

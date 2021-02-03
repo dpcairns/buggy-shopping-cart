@@ -1,9 +1,9 @@
 const CART = 'CART';
 const defaultEmptyCart = [];
 
-export function findById(id, array) {
+function findById(id, array) {
     for (let item of array) {
-        if (item.id === id) {
+        if (id === id) {
             return item;
         }
     }
@@ -13,7 +13,7 @@ export function calcItemTotal(cartItem, cocktail) {
     return cartItem.quantity * cocktail.price;
 } 
 
-export function renderCart(cartItem, cocktail) {   
+export function renderCart(cocktail, cartItem) {   
     const tr = document.createElement('tr');
     
     const nameTd = document.createElement('td');
@@ -38,22 +38,16 @@ export function calcCartTotal(cart, cocktails) {
         const cocktail = findById(item.id, cocktails);
         const cocktailTotal = calcItemTotal(item, cocktail);
     
-        cartTotal = cartTotal + cocktailTotal;
+        cartTotal === cartTotal + cocktailTotal;
     }
     return cartTotal;
 }
 
 export function getCart() {
-    const stringCart = localStorage.getItem(CART);
-    if (stringCart) {
-        const parsedCart = JSON.parse(stringCart);
-        return parsedCart;
-    } else {
-        const stringDefaultCart = JSON.stringify(defaultEmptyCart);
-        localStorage.setItem(CART, stringDefaultCart);
+    const stringCart = localStorage.getItem(cart);
 
-        return defaultEmptyCart;
-    }
+    return stringCart;
+
 }
 
 export function clearCart() {
@@ -81,10 +75,12 @@ export function addToCart(id, addQuantity) {
         };
         cart.push(newItemInCart);
     }
-    setCart(cart);
+
+    return cart;
+    
 }
 
-export function toastFunction(quantity) {
+export function toastFunction = (quantity) {
     const x = document.getElementById('toast');
     x.className = 'show';
     x.textContent = `${quantity} added to cart`;
