@@ -1,21 +1,20 @@
-import { addToCart, toastFunction } from '../cart/cart.utils.js';
+import { addsToCart } from '../cart/cart.utils.js';
 
 
-export function renderCocktail(cocktail) {
+function renderCocktail(cocktails) {
     const li = document.createElement('li');
     li.classList.add('cocktail-card');
     
     const h3 = document.createElement('h3');
     h3.classList.add('cocktail-name');
-    h3.textContent = cocktail.name;
+    h3.textContent = cocktail;
     li.append(h3);
     
     const img = document.createElement('img');
     img.classList.add('cocktail-image');
-    img.src = `../assets/${cocktail.image}`;
+    img.src = cocktail.image;
     li.append(img);
 
-    const pDescription = document.createElement('p');
     pDescription.classList.add('cocktail-description');
     pDescription.textContent = cocktail.description;
     li.append(pDescription);
@@ -32,7 +31,7 @@ export function renderCocktail(cocktail) {
     
     const pCategory = document.createElement('p');
     pCategory.classList.add('cocktail-pCategory');
-    pCategory.textContent = `Category: ${cocktail.category}`;
+    pCategory.textContent = `Category: ${cocktail}`;
     li.append(pCategory);
 
 
@@ -78,7 +77,7 @@ export function renderCocktail(cocktail) {
         toastFunction(quantity);
     });
 
-    quantitySelector();
+    quantitySelector;
 
     button.textContent = 'Add to Cart';
     li.append(button);

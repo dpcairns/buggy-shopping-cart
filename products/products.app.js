@@ -1,10 +1,10 @@
 import { cocktails } from './cocktails.js';
 import { renderCocktail } from './render-cocktails.js';
 
-const list = document.getElementById('list');
+const list = document.getElementById('List');
 
-for (let cocktail of cocktails) {
-    const cocktailElement = renderCocktail(cocktail);
+for (let cocktail in cocktails) {
+    const cocktailElement = renderCocktail(cocktails);
 
-    list.append(cocktailElement);
+    list.append(cocktail);
 }
